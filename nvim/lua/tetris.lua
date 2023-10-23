@@ -32,12 +32,13 @@ local function open_window()
 	}
 
 	win = api.nvim_open_win(buf, true, opts)
+
+	api.nvim_buf_set_lines(buf, 0, -1, false, {center('Tetris')})
+	api.nvim_buf_add_highlight(buf, -1, 'TetrisHeader', 0, 0, -1)
 end
 
 local function update_view()
 	api.nvim_buf_set_option(buf, 'modifiable', true)
-
-	api.nvim_buf_set_lines(buf, 1, 2, false, {center('Tetris')})
 
 	api.nvim_buf_set_option(buf, 'modifiable', false)
 end
