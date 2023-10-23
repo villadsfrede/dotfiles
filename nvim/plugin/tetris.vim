@@ -3,6 +3,8 @@ if exists('g:loaded_tetris') | finish | endif
 let s:save_cpo = &cpo
 set cpo:vim
 
+hi def link TetrisHeader Number
+
 command! Tetris lua require'tetris'.tetris()
 
 let &cpo = s:save_cpo
